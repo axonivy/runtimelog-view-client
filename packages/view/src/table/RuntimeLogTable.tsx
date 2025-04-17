@@ -73,7 +73,12 @@ export const RuntimeLogTable = ({ RuntimeLogEntry, clearlogs, onRowClick }: View
           <Label>{cell.getValue()}</Label>
         </Flex>
       ),
-      maxSize: 30
+      maxSize: 30,
+      sortingFn: (rowA, rowB) => {
+        const levelA = levelPriority[rowA.getValue('level') as LogLevel];
+        const levelB = levelPriority[rowB.getValue('level') as LogLevel];
+        return levelA - levelB;
+      }
     },
     {
       accessorKey: 'project',

@@ -1,3 +1,8 @@
 .detail-view-key {
   font-weight: bold;
+  padding-top: 10px;
+}
+
+.detail-view-close {
+  justify-content: end;
 }
